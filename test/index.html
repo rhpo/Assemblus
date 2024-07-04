@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Assembleur</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Simulation d'Assembleur (ESST) -
+        <small style="opacity: 0.6">par Ramy Hadid</small>
+      </h1>
+    </header>
+
+    <div class="container main">
+      <textarea
+        id="code"
+        spellcheck="false"
+        placeholder="Enter your code here..."
+        rows="10"
+        cols="50"
+        style="font-family: Consolas"
+      >
+
+      * a = 100
+      * b = 101
+      * c = 102
+
+      READ
+      STORE 100, D
+
+      READ
+      MULT 100, D
+      MULT 2, IMM
+      STORE 101, D
+      LOAD 100, D
+      MULT 100, D
+      ADD 101, D
+
+      READ
+      MULT 3, IMM
+      DIV 4, IMM
+      ADD 101, D
+      WRITE</textarea
+      >
+
+      <div class="right">
+        <div class="accumulator-panel">
+          <h2>Accumulateur (ACC)</h2>
+          <div class="accumulator">
+            <h1 class="accumulator-value">0</h1>
+          </div>
+        </div>
+
+        <div class="sub">
+          <div class="screen">
+            <div class="output">
+              <h2>Output</h2>
+              <div class="out" id="out"></div>
+            </div>
+
+            <div class="memories">
+              <h2>Memory</h2>
+              <div id="memory">
+                <div class="row">
+                  <div class="child">Address</div>
+                  <div class="child">Value</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button id="run">Run</button>
+        </div>
+      </div>
+    </div>
+
+    <script defer type="module" src="index.js"></script>
+  </body>
+</html>
